@@ -1,3 +1,12 @@
+
+@font-face{
+    font-family:"Helvetica";
+    src:url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("woff"),
+    url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("opentype"),
+    url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("truetype");
+}
+
+
 .productsContainer{
 
 }
@@ -41,3 +50,166 @@
     color: #F2F0FD;
 }
 
+.itemContainer{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    flex-wrap: wrap;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 24px rgba(93, 62, 188, 0.04);
+    border-radius: 2px;
+    margin-top: 16px;
+    column-gap: 24px;
+    row-gap: 22px;
+    max-width: 620px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 124px;
+}
+
+.img{
+    width: 124px;
+    height: 124px;
+    background: #FEFEFE;
+    border: 1.17666px solid #F3F0FE;
+    border-radius: 12px; 
+}
+
+.price{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    /* or 143% */
+
+    padding-top: 8px;
+    color: #1EA4CE;
+}
+
+.title{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 5px 0 8px 0;
+    color: #191919;
+    height: 40px;
+    width: 90%;
+}
+
+.addBtn{
+    background: #1EA4CE;
+    border-radius: 2px;
+	border: none;
+	padding: 2px;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+
+    color: #FFFFFF;
+}
+
+
+.pagination{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+    padding: 0;
+    font-size: 14px;
+    gap: 5px;
+    margin-top: 32px;
+}
+
+.pagination .pageNum{
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.pagination .pageNum:hover{
+    color: #1EA4CE;
+}
+
+.pagination .activePage{
+    background-color: #1EA4CE;
+    color: #fff;
+}
+
+.activePage:hover{
+    color:#fff !important
+}
+
+.previousLink::before{
+    content: '';
+    display: inline-block;
+    background-image: url('../../assets/arrow-left.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 12px;
+    height: 12px;
+    margin-right: 20px;
+    margin-top: 2px;
+    
+}
+
+.previousLink{
+    margin-right: 56px;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    cursor: pointer;
+    color: #1EA4CE;
+}
+
+.nextLink{
+    margin-left: 56px;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    cursor: pointer;
+    color: #1EA4CE;
+}
+
+.disabled{
+    color: #697488;
+    cursor: not-allowed;
+}
+
+.disabled::before{
+    content: '';
+    display: inline-block;
+    background-image: url('../../assets/arrow-left-disabled.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 12px;
+    height: 12px;
+    margin-right: 20px;
+    margin-top: 2px;
+
+}
+
+.break{
+    padding-bottom: 5px;
+}
