@@ -1,0 +1,81 @@
+.title{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+
+    color: #697488;
+}
+
+
+.optionContainer{
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    padding: 24px 127px 24px 24px;
+    background-color: #fff;
+    border-radius: 2px;
+
+    box-shadow: 0px 6px 24px rgba(93, 62, 188, 0.04);
+}
+
+
+.option{
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.option input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background: #FFFFFF;
+    border: 2px solid #DFDEE2;
+    border-radius: 50%;
+  }
+
+.option:hover input ~ .checkmark {
+    background: #FFFFFF;
+
+  }
+  
+.option input:checked ~ .checkmark {
+    background-color: #FFFFFF;
+    border: 2px solid #1EA4CE;
+    background-image: url('../../../assets/check.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10px;
+  }
+
+
+.option > label{
+    display: block;
+    margin-left: 36px;
+    padding-top: 2px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    
+    letter-spacing: 0.16px;
+
+
+    color: #525252;
+}
+

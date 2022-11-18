@@ -1,0 +1,43 @@
+.productsContainer{
+
+}
+
+.productsContainer > p{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+
+    letter-spacing: 0.25px;
+    color: #6F6F6F;
+}
+
+.chipContainer{
+    display: flex;
+    column-gap: 8px;
+}
+
+.chip{
+    padding: 6px 16px;
+    background: #F2F0FD;
+    border-radius: 2px; 
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+
+    text-align: center;
+
+    color: #1EA4CE;
+    cursor: pointer;
+
+}
+
+.active{
+    background: #1EA4CE;
+    color: #F2F0FD;
+}
+

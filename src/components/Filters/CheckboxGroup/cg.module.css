@@ -1,0 +1,99 @@
+.title{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+
+    color: #697488;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    /* padding: 24px; */
+    background-color: #fff;
+    border-radius: 2px;
+    padding-bottom: 24px;
+
+    box-shadow: 0px 6px 24px rgba(93, 62, 188, 0.04);
+
+}
+
+.optionContainer{
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    height: 120px;
+    overflow-y: scroll;
+    padding: 3px 5px 15px 25px;
+
+}
+
+
+.option{
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.option input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    border-radius: 2px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 12px;
+  }
+
+  .option input:checked ~ .checkmark {
+    background-color: #1EA4CE;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .option input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .option .checkmark:after {
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 1.5px 1.5px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+.option > label{
+    margin-left: 32px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+
+    letter-spacing: 0.16px;
+
+    color: #525252;
+}
