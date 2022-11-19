@@ -5,26 +5,104 @@ import s from './products.module.css'
 import items from '../../data/items.json'
 
 import ReactPaginate from 'react-paginate';
+import sendRequest from '../../service';
 
+import { getDataFromFakeApi } from '../../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Products(){
+    const dispatch = useDispatch()
+    const products = useSelector((state) => state.cartItems.productItems)
+    const filters = useSelector((state) => state.filters)
+
     const [chip,setChip] = useState(['mug'])
-    const [currentItems,setCurrentItems] = useState(null)
+    const [currentItems,setCurrentItems] = useState([])
     const [pageCount,setPageCount] = useState(0)
     const [itemOffset,setItemOffset] = useState(0)
+
+    const [triggerSort,setTriggerSort] = useState(false)
+    
+    const [items,setItems] = useState([])
+    const [filteredItems,setFilteredItems] = useState([])
+    
     const itemsPerPage = 16
-    const [item,setItem] = useState(['a','b','c','d','e','f','g','h','j','k'])
+
 
     useEffect(() => {
-        console.log(items)
-        const endOffset = itemOffset + itemsPerPage;
-        setCurrentItems(items.slice(itemOffset, endOffset));
-        setPageCount(Math.ceil(items.length / itemsPerPage));
+        dispatch(getDataFromFakeApi())
+    },[])
 
-    },[itemOffset,itemsPerPage,items])
+    useEffect(() => {
+        let temp = [...items]
+
+        if(chip.length !== 2){
+
+            if(chip.includes('mug')){
+                temp = temp.filter((item) => item.itemType === 'mug')
+            }
+
+            if(chip.includes('shirt')){
+                temp = temp.filter((item) => item.itemType === 'shirt')
+
+            }
+        }
+
+
+        if(filters.sort === 'lth'){
+            temp = temp.sort((a,b) => a.price - b.price)
+        }
+
+        if(filters.sort === 'htl'){
+            temp = temp.sort((a,b) => b.price - a.price)
+        }
+
+        if(filters.sort === 'nto'){
+            temp = temp.sort((a,b) => b.added - a.added)
+        }
+
+        if(filters.sort === 'otn'){
+            temp = temp.sort((a,b) => a.added - b.added)
+        }
+
+        if(!filters.brands.includes('all')){
+            temp = temp.filter((item) => filters.brands.includes(item.manufacturer))
+        }
+
+        if(!filters.tags.includes('all')){
+            temp = temp.filter((item) => filters.tags.some((s) => item.tags.includes(s)))
+        }
+
+        setFilteredItems(temp)
+
+    },[filters,chip,items])
+
+
+
+
+
+
+
+    useEffect(() => {
+        console.log('xxx',filteredItems)
+    },[filteredItems])
+
+    useEffect(() => {
+        setItems(products)
+        setFilteredItems(products)
+    },[products])
+
+
+    useEffect(() => {
+        const endOffset = itemOffset + itemsPerPage;
+        setCurrentItems(filteredItems?.slice(itemOffset, endOffset));
+        setPageCount(Math.ceil(filteredItems?.length / itemsPerPage));
+
+    },[itemOffset,itemsPerPage,items,filteredItems])
+
+
 
     const handlePageClick = (event) => {
-        const newOffset = (event.selected * itemsPerPage) % items.length;
+        const newOffset = (event.selected * itemsPerPage) % filteredItems.length;
         setItemOffset(newOffset);
       };
 
@@ -38,14 +116,6 @@ export default function Products(){
         }
     }
 
-    const PrevLabel = () => {
-        return(
-            <>
-                <img src={require('../../assets/arrow-left.png')}/>
-                <span>Prev</span>
-            </>
-        )
-    }
 
     return(
         <div className={s.productsContainer}>
@@ -55,16 +125,21 @@ export default function Products(){
                 <div className={`${s.chip} ${chip.includes('shirt') && s.active}`} onClick={() => {handleClick('shirt')}}>shirt</div>
             </div>
             <div className={s.itemContainer}>
-                {currentItems?.map((item) => {
+                {
+                    currentItems.length > 0 ?
+                    currentItems?.map((item) => {
                     return(
-                        <div className={s.card}>
+                        <div className={s.card} key={item.added}>
                             <div className={s.img}></div>
                             <label className={s.price}>₺ {item.price}</label>
                             <p className={s.title}>{item.name}</p>
                             <button className={s.addBtn}>Add</button>
                         </div>
                     )
-                })}
+                })
+                :
+                <div>No Available Data</div>
+                }
             </div>
             <div>
                 <ReactPaginate
@@ -80,8 +155,9 @@ export default function Products(){
                     pageLinkClassName={s.pageNum}
                     previousLinkClassName={s.previousLink}
                     nextLinkClassName={s.nextLink}
+                    nextClassName={s.next}
                     activeLinkClassName={s.activePage}
-                    disabledLinkClassName={s.disabled}
+                    disabledLinkClassName={s.disabledLink}
                 />
             </div>  
         </div>

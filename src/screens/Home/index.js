@@ -4,27 +4,27 @@ import Cart from '../../components/Cart';
 import Filters from '../../components/Filters';
 import Header from '../../components/Header';
 import Products from '../../components/Products';
-import { getDataFromFakeApi } from '../../redux/actions';
 
 import s from './home.module.css'
 
 export default function Home(){
-    const products = useSelector((state) => state.cartItems)
-    const [items,setItems] = useState([])
 
-    useEffect(() => {
-        setItems(products.productItems)
-    },[products])
+    const [items,setItems] = useState([])
 
 
     return(
         <>
             <Header />
             <main>
-                <section><Filters /></section>
-                <section><Products /></section>
-                <section><Cart /></section>
+                <section style={{flex:1}}><Filters /></section>
+                <section style={{flex:2.2}}><Products /></section>
+                <section style={{flex:1}}><Cart /></section>
             </main>
+            <footer id={s.footer}>
+                <span>©2019 Market</span>
+                <span>•</span>
+                <span>Privacy Policy</span>
+            </footer>
         </>
     )
 }

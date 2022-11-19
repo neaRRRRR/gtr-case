@@ -1,3 +1,119 @@
 .cartContainer{
+    display: block;
+    background: #1EA4CE;
+    border-radius: 2px;
+    padding: 8.2px 8px 8.2px 8px;
+}
 
+.contentContainer{
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    border-radius: 2px;
+    padding: 27px 22px;
+}
+
+.itemContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.itemContainer::after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #F4F4F4;
+    margin-top: 19px;
+    margin-bottom: 16px;
+}
+
+.content{
+    display: flex;
+}
+
+.info{
+    flex: 1;
+}
+
+.info > p {
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.16px;
+
+    color: #191919;
+}
+
+
+
+.info > label {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+
+    letter-spacing: 0.16px;
+
+    color: #1EA4CE;
+}
+
+.count{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex: 1;
+}
+
+.svg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#minus{
+    margin-right: 11px;
+}
+
+#add{
+    margin-left: 11px;
+}
+
+.itemCount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background: #1EA4CE;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+}
+
+.totalContainer{
+    display: flex;
+    flex-direction: row-reverse;
+
+    background: #FFFFFF;
+    border: 2px solid #1EA4CE;
+    border-radius: 2px;
+
+    margin-left: auto;
+    margin-right: 0;
+
+    padding: 17px 24px;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+
+
+    color: #1EA4CE;
 }

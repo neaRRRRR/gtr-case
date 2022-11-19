@@ -1,5 +1,28 @@
 main{
     display: flex;
+    justify-content: center;
     padding: 2% 7%;
     column-gap: 16px;
+}
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 174%;
+
+    color: #1EA4CE;
+
+    margin-bottom: 40px;
+}
+
+
+#footer > span:nth-child(2){
+    margin-left: 16px;
+    margin-right: 16px;
 }

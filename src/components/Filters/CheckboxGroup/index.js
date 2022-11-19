@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setBrands, setTags } from '../../../redux/actions';
 import Input from '../../Input';
 
 import s from './cg.module.css'
 
 
 let searchTimeout
-export default function CheckboxGroup({title,data}){
+export default function CheckboxGroup({title,data,type}){
+
+    const dispatch = useDispatch()
 
     const [search,setSearch] = useState('')
     const [checked,setChecked] = useState(['all'])
@@ -29,6 +33,20 @@ export default function CheckboxGroup({title,data}){
     useEffect(() => {
         if(checked.length === 0){
             setChecked(['all'])
+            if(type === 'brands'){
+                dispatch(setBrands(['all']))
+            }
+            else{
+                dispatch(setTags(['all']))
+            }
+        }
+        else{
+            if(type === 'brands'){
+                dispatch(setBrands(checked))
+            }
+            else{
+                dispatch(setTags(checked))
+            }
         }
     },[checked])
 

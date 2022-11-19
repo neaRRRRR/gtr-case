@@ -7,6 +7,9 @@ export const GET_NUMBER_CART = 'GET_NUMBER_CART';
 export const ADD_CART = 'ADD_CART' ;
 export const UPDATE_CART = 'UPDATE_CART';
 export const DELETE_CART = 'DELETE_CART';
+export const SET_SORT = 'SET_SORT'
+export const SET_BRANDS = 'SET_BRANDS'
+export const SET_TAGS = 'SET_TAGS'
 
 
 
@@ -14,8 +17,9 @@ export const DELETE_CART = 'DELETE_CART';
 export const getDataFromFakeApi = () => {
 
     return (dispatch) => {
-        return sendRequest.get('posts').then((data) => {
-            dispatch(getAllProduct(data))
+        return sendRequest.get('items').then((data) => {
+            let temp = data.sort((a,b) => a.price - b.price)
+            dispatch(getAllProduct(temp))
         })
         .catch(err => console.log(err))
     }
@@ -70,3 +74,23 @@ export function decreaseQuantity(payload){
     }
 }
 
+export function setSort(payload){
+    return{
+        type:'SET_SORT',
+        payload
+    }
+}
+
+export function setBrands(payload){
+    return{
+        type:'SET_BRANDS',
+        payload
+    }
+}
+
+export function setTags(payload){
+    return{
+        type:'SET_TAGS',
+        payload
+    }
+}

@@ -1,4 +1,5 @@
-[
+{
+"companies":[
   {
     "slug": "Dickens-Franecki",
     "name": "Dickens - Franecki",
@@ -219,4 +220,4 @@
     "account": 21650895,
     "contact": "Cletus Hessel"
   }
-]
+]}

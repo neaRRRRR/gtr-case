@@ -1,11 +1,17 @@
 import { combineReducers } from 'redux';
-import {GET_ALL_PRODUCT,GET_NUMBER_CART,ADD_CART, DECREASE_QUANTITY, INCREASE_QUANTITY, DELETE_CART} from  '../actions';
+import {GET_ALL_PRODUCT,GET_NUMBER_CART,ADD_CART, DECREASE_QUANTITY, INCREASE_QUANTITY, DELETE_CART, SET_SORT, SET_BRANDS, SET_TAGS} from  '../actions';
 
 const initItem = {
     numberCart:0,
     Carts:[],
     productItems:[]
 }
+
+const initFilter = {
+    sort: 'lth',
+    brands: ['all'],
+    tags: ['all'],
+} 
 
 function cart(state = initItem,action){
     switch(action.type){
@@ -84,7 +90,35 @@ function cart(state = initItem,action){
             return state;
     }
 }
+
+
+function sort(state = initFilter,action){
+    switch(action.type){
+        case SET_SORT: 
+            return{
+                ...state,
+                sort:action.payload
+            }
+        case SET_BRANDS:
+            return{
+                ...state,
+                brands:action.payload
+            }
+        case SET_TAGS:
+            return{
+                ...state,
+                tags:action.payload
+            }
+
+        default:
+            return state;
+    }
+
+}
+
+
 const Cart = combineReducers({
-    cartItems:cart
+    cartItems:cart,
+    filters:sort
 });
 export default Cart;

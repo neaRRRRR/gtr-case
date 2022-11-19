@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setSort } from '../../../redux/actions';
 
 import s from './rg.module.css'
 
 export default function RadioGroup(){
 
+    const dispatch = useDispatch()
     const [state,setState] = useState('lth')
 
+    useEffect(() => {
+        dispatch(setSort(state))
+    },[state])
+
+    
 
     return(
         <div>

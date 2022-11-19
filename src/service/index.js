@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-let API_URL = 'http://localhost:3030/';
+let API_URL = 'http://localhost:3333/';
 let PROD_API_URL = 'https://ukaan.io/'
 
 const sendRequest = {

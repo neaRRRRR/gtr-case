@@ -61,7 +61,7 @@
     margin-top: 16px;
     column-gap: 24px;
     row-gap: 22px;
-    max-width: 620px;
+    /* max-width: 620px; */
 }
 
 .card{
@@ -167,6 +167,21 @@
     
 }
 
+.nextLink::after{
+    content: '';
+    display: inline-block;
+    background-image: url('../../assets/arrow-left.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 12px;
+    height: 12px;
+    margin-left: 20px;
+    margin-top: 2px;
+
+    transform: rotate(180deg);
+}
+
 .previousLink{
     margin-right: 56px;
 
@@ -191,12 +206,12 @@
     color: #1EA4CE;
 }
 
-.disabled{
+.disabledLink{
     color: #697488;
     cursor: not-allowed;
 }
 
-.disabled::before{
+.previousLink.disabledLink::before{
     content: '';
     display: inline-block;
     background-image: url('../../assets/arrow-left-disabled.png');
@@ -209,6 +224,23 @@
     margin-top: 2px;
 
 }
+
+
+.nextLink.disabledLink::after{
+    content: '';
+    display: inline-block;
+    background-image: url('../../assets/arrow-left-disabled.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 12px;
+    height: 12px;
+    margin-left: 20px;
+    margin-top: 2px;
+
+    transform: rotate(180deg);
+}
+
 
 .break{
     padding-bottom: 5px;

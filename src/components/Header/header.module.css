@@ -19,10 +19,26 @@ header{
 }
 
 .cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     right: 7%;
     min-width: 130px;
     height: 100%;
     background-color: #147594;
     align-self: flex-end;
+}
+
+.cart > span{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.16px;
+
+    color: #FFFFFF;
+
+    margin-left: 8px;
 }
