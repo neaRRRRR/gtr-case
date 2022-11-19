@@ -1,15 +1,17 @@
 import sendRequest from "../../service";
 
-export const INCREASE_QUANTITY = 'INCREASE_QUANTITY';
-export const DECREASE_QUANTITY = 'DECREASE_QUANTITY';
-export const GET_ALL_PRODUCT = 'GET_ALL_PRODUCT';
-export const GET_NUMBER_CART = 'GET_NUMBER_CART';
-export const ADD_CART = 'ADD_CART' ;
-export const UPDATE_CART = 'UPDATE_CART';
-export const DELETE_CART = 'DELETE_CART';
+export const INCREASE_QUANTITY = 'INCREASE_QUANTITY'
+export const DECREASE_QUANTITY = 'DECREASE_QUANTITY'
+export const GET_ALL_PRODUCT = 'GET_ALL_PRODUCT'
+export const GET_NUMBER_CART = 'GET_NUMBER_CART'
+export const ADD_CART = 'ADD_CART'
+export const UPDATE_CART = 'UPDATE_CART'
+export const DELETE_CART = 'DELETE_CART'
+export const CART_TOTAL = 'CART_TOTAL'
 export const SET_SORT = 'SET_SORT'
 export const SET_BRANDS = 'SET_BRANDS'
 export const SET_TAGS = 'SET_TAGS'
+
 
 
 
@@ -57,6 +59,13 @@ export function updateCart(payload){
 export function deleteCart(payload){
     return{
         type:'DELETE_CART',
+        payload
+    }
+}
+
+export function cartTotal(payload){
+    return{
+        type:'CART_TOTAL',
         payload
     }
 }

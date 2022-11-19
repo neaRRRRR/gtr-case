@@ -7,7 +7,7 @@ import items from '../../data/items.json'
 import ReactPaginate from 'react-paginate';
 import sendRequest from '../../service';
 
-import { getDataFromFakeApi } from '../../redux/actions';
+import { addCart, getDataFromFakeApi } from '../../redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
 
 export default function Products(){
@@ -82,9 +82,6 @@ export default function Products(){
 
 
 
-    useEffect(() => {
-        console.log('xxx',filteredItems)
-    },[filteredItems])
 
     useEffect(() => {
         setItems(products)
@@ -116,6 +113,10 @@ export default function Products(){
         }
     }
 
+    const addItem = (item) => {
+        dispatch(addCart(item))
+    }
+
 
     return(
         <div className={s.productsContainer}>
@@ -133,7 +134,7 @@ export default function Products(){
                             <div className={s.img}></div>
                             <label className={s.price}>₺ {item.price}</label>
                             <p className={s.title}>{item.name}</p>
-                            <button className={s.addBtn}>Add</button>
+                            <button className={s.addBtn} onClick={() => {addItem(item)}}>Add</button>
                         </div>
                     )
                 })
