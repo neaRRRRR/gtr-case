@@ -11,8 +11,10 @@ export default function Cart(){
 
     const cart = useSelector((state) => state.cartItems)
     const cartCount = useSelector((state) => state.cartItems.numberCart)
+    const displayCart = useSelector((state) => state.toggle)
     const [sum,setSum] = useState(0)
     const dispatch = useDispatch()
+
 
     useEffect(() => {
         console.log(cart)
@@ -45,7 +47,7 @@ export default function Cart(){
         <>
         {
             cartCount > 0 ?
-                <div className={s.cartContainer}>
+                <div className={s.cartContainer} style={displayCart.toggleStatus ? {display:'block'} : {display:'none'}}>
                 <div className={s.contentContainer}>
                 {cart.Carts.map((item) => {
                     return(
@@ -72,7 +74,23 @@ export default function Cart(){
                 </div>
             </div>
             :
-            <div></div>
+            <div className={s.cartContainer} style={displayCart.toggleStatus ? {display:'block'} : {display:'none'}}>
+                <div className={s.contentContainer}>
+                    <div className={s.itemContainer}>
+                        <div className={s.content}>
+                            <div className={s.info}>
+                                <p>Cart is empty</p>
+                                <label>-</label>
+                            </div>
+                            <div className={s.count}>
+                                <div id={s.minus} className={s.svg}><Minus /></div>
+                                <div className={s.itemCount}>-</div>
+                                <div id={s.add} className={s.svg}><Add /></div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
         }
         </>
     )

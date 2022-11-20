@@ -1,4 +1,5 @@
 .cartContainer{
+    position: relative;
     display: block;
     background: #1EA4CE;
     border-radius: 2px;

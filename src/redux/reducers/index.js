@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import {GET_ALL_PRODUCT,GET_NUMBER_CART,ADD_CART, DECREASE_QUANTITY, INCREASE_QUANTITY, DELETE_CART, CART_TOTAL, SET_SORT, SET_BRANDS, SET_TAGS} from  '../actions';
+import {GET_ALL_PRODUCT,GET_NUMBER_CART,ADD_CART, DECREASE_QUANTITY, INCREASE_QUANTITY, DELETE_CART, CART_TOTAL, SET_SORT, SET_BRANDS, SET_TAGS, SET_TOGGLE_CART} from  '../actions';
 
 const initItem = {
     numberCart:0,
@@ -13,6 +13,10 @@ const initFilter = {
     brands: ['all'],
     tags: ['all'],
 } 
+
+const initCart = {
+    toggleStatus:false
+}
 
 function cart(state = initItem,action){
     switch(action.type){
@@ -124,9 +128,23 @@ function sort(state = initFilter,action){
 
 }
 
+function toggleCart(state = initCart,action){
+    switch(action.type){
+        case SET_TOGGLE_CART: 
+            return{
+                toggleStatus:action.payload
+            }
+        
+        default:
+            return state;
+        }
+}
+
 
 const Cart = combineReducers({
     cartItems:cart,
-    filters:sort
+    filters:sort,
+    toggle:toggleCart,
 });
+
 export default Cart;

@@ -18,7 +18,7 @@ export default function Home(){
             <main>
                 <section style={{flex:1}}><Filters /></section>
                 <section style={{flex:2.2}}><Products /></section>
-                <section style={{flex:1}}><Cart /></section>
+                <section id={s.cart} style={{flex:1}}><Cart /></section>
             </main>
             <footer id={s.footer}>
                 <span>©2019 Market</span>

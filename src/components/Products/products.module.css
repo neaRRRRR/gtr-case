@@ -245,3 +245,25 @@
 .break{
     padding-bottom: 5px;
 }
+
+
+@media (max-width:600px) {
+    .nextLink{
+        display: none;
+    }
+
+    .previousLink{
+        display: none;
+    }
+}
+
+@media (min-width:1800px) {
+    .card{
+        width: 150px;
+    }
+
+    .img{
+        width: 150px;
+    }
+
+}

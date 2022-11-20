@@ -11,6 +11,7 @@ export const CART_TOTAL = 'CART_TOTAL'
 export const SET_SORT = 'SET_SORT'
 export const SET_BRANDS = 'SET_BRANDS'
 export const SET_TAGS = 'SET_TAGS'
+export const SET_TOGGLE_CART = 'SET_TOGGLE_CART'
 
 
 
@@ -100,6 +101,13 @@ export function setBrands(payload){
 export function setTags(payload){
     return{
         type:'SET_TAGS',
+        payload
+    }
+}
+
+export function setToggleDisplay(payload){
+    return{
+        type:'SET_TOGGLE_CART',
         payload
     }
 }

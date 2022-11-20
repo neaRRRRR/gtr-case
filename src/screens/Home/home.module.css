@@ -3,6 +3,7 @@ main{
     justify-content: center;
     padding: 2% 7%;
     column-gap: 16px;
+    flex-direction: row;
 }
 
 
@@ -25,4 +26,18 @@ footer{
 #footer > span:nth-child(2){
     margin-left: 16px;
     margin-right: 16px;
+}
+
+@media (max-width:800px) {
+    main{
+        flex-direction: column;
+    }
+
+    #cart{
+      position: fixed;
+      top: 15%;
+      left: 5%;
+      right: 5%;
+    
+    }
 }

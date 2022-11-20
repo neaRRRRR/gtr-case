@@ -131,7 +131,7 @@ export default function Products(){
                     currentItems?.map((item) => {
                     return(
                         <div className={s.card} key={item.added}>
-                            <div className={s.img}></div>
+                            <div className={s.img}><img src='https://picsum.photos/124' style={{borderRadius:12}} /></div>
                             <label className={s.price}>₺ {item.price}</label>
                             <p className={s.title}>{item.name}</p>
                             <button className={s.addBtn} onClick={() => {addItem(item)}}>Add</button>
