@@ -1,10 +1,15 @@
-# Getting Started with Create React App
+# Getting Started with Challenge
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+
+### `yarn` or `npm install`
+
+In order to run project you need to run these scripts, this will install dependencies needed
 
 ### `npm start`
 
@@ -14,57 +19,48 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+### `yarn start`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Also runs the app in development mode.
 
-### `npm run build`
+### `json-server --watch items.json --port 3333`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To get data display on project you need to run [json-server](https://github.com/typicode/json-server), in `src/data` folder
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To get this package run, you need to install with `npm install -g json-server` in terminal
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## The Packages I used
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Json-server
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Quick back-end for prototyping and mocking. 
+For more detail: [json-server](https://github.com/typicode/json-server)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### React-Paginate
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+A ReactJS component to render a pagination for list items.
+For more detail: [react-paginate](https://www.npmjs.com/package/react-paginate)
 
-## Learn More
+### Axios
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Axios is a promise-based HTTP Client for node.js and the browser. It is isomorphic (= it can run in the browser and nodejs with the same codebase). On the server-side it uses the native node.js http module, while on the client (browser) it uses XMLHttpRequests.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+For more detail: [axios](https://axios-http.com/docs/intro)
 
-### Code Splitting
+## Deploying Netlify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Netlify
 
-### Analyzing the Bundle Size
+Netlify is a remote-first cloud computing company that offers a development platform that includes build, deploy, and serverless backend services for web applications and dynamic websites.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+For more detail: [Netlify](https://www.netlify.com)
 
-### Making a Progressive Web App
+#### Project url which is deployed in Netlify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Url: [Challenge](https://deft-douhua-343489.netlify.app/)
 
-### Advanced Configuration
+>  ⚠️  **If there is an empty list and loading text when the page rendered you are getting CORS error which can be bypassed by installing [CORS unblock] extension**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> For mozilla firefox: [CORS unblock](https://addons.mozilla.org/en-US/firefox/addon/cors-unblock/)
+> For chromium browsers (Google Chrome, Opera etc.): [CORS unblock](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en)
