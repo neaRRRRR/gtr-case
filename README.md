@@ -63,4 +63,5 @@ Url: [Challenge](https://deft-douhua-343489.netlify.app/)
 >  ⚠️  **If there is an empty list and loading text when the page rendered you are getting CORS error which can be bypassed by installing [CORS unblock] extension**
 
 > For mozilla firefox: [CORS unblock](https://addons.mozilla.org/en-US/firefox/addon/cors-unblock/)
+
 > For chromium browsers (Google Chrome, Opera etc.): [CORS unblock](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en)
